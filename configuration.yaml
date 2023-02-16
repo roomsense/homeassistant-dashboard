@@ -58,13 +58,12 @@ recorder:
 
 template:
   - sensor:
-
       - name: "chart11"
         state: |
               {{  now()    }}
         attributes:
             Heights: |
-                  {% set entities=["number.roomsense_macrothreshold0_f412fad7b074_2","number.roomsense_macrothreshold1_f412fad7b074_2","number.roomsense_macrothreshold2_f412fad7b074_2","number.roomsense_macrothreshold3_f412fad7b074_2","number.roomsense_macrothreshold4_f412fad7b074_2","number.roomsense_macrothreshold5_f412fad7b074_2","number.roomsense_macrothreshold6_f412fad7b074_2","number.roomsense_macrothreshold7_f412fad7b074_2","number.roomsense_macrothreshold8_f412fad7b074_2"] %}
+                  {% set entities=["number.roomsense_macrothreshold0_f412fad7b074","number.roomsense_macrothreshold1_f412fad7b074","number.roomsense_macrothreshold2_f412fad7b074","number.roomsense_macrothreshold3_f412fad7b074","number.roomsense_macrothreshold4_f412fad7b074","number.roomsense_macrothreshold5_f412fad7b074","number.roomsense_macrothreshold6_f412fad7b074","number.roomsense_macrothreshold7_f412fad7b074","number.roomsense_macrothreshold8_f412fad7b074"] %}
                   {{ entities | map('states') | list       }}
 
       - name: "chart12"
@@ -80,7 +79,7 @@ template:
               {{  now()    }}
         attributes:
             Heights: |
-                  {% set entities=["number.roomsense_microthreshold0_f412fad7b074_2","number.roomsense_microthreshold1_f412fad7b074_2","number.roomsense_microthreshold2_f412fad7b074_2","number.roomsense_microthreshold3_f412fad7b074_2","number.roomsense_microthreshold4_f412fad7b074_2","number.roomsense_microthreshold5_f412fad7b074_2","number.roomsense_microthreshold6_f412fad7b074_2","number.roomsense_microthreshold7_f412fad7b074_2","number.roomsense_microthreshold8_f412fad7b074_2"] %}
+                  {% set entities=["number.roomsense_microthreshold0_f412fad7b074","number.roomsense_microthreshold1_f412fad7b074","number.roomsense_microthreshold2_f412fad7b074","number.roomsense_microthreshold3_f412fad7b074","number.roomsense_microthreshold4_f412fad7b074","number.roomsense_microthreshold5_f412fad7b074","number.roomsense_microthreshold6_f412fad7b074","number.roomsense_microthreshold7_f412fad7b074","number.roomsense_microthreshold8_f412fad7b074"] %}
                   {{ entities | map('states') | list       }}
                   
       - name: "chart22"
@@ -92,11 +91,14 @@ template:
                   {{ entities | map('states') | list       }}
 
 lovelace:
-  mode: yaml
-
-#
-# Add-On for lovelace
-#
+  mode: storage
+  dashboards:
+    lovelace-sense:
+      mode: yaml
+      title: sense
+      icon: mdi:script
+      show_in_sidebar: true
+      filename: dashboards.yaml
   resources:
     - url: /local/cards/card-mod.js
       type: module
