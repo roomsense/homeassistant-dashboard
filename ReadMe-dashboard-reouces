@@ -1,0 +1,16 @@
+In order to load javascript files, go to settings --> Dashboards --> click on the 3 dots on the up right corner --> Resouces --> Add Resouces and
+add the URLs below one by one:
+
+- url: /local/cards/card-mod.js
+  type: module
+- url: /local/cards/apexcharts-card.js
+  type: module
+- url: /local/cards/numberbox-card.js
+  type: module
+- url: /local/cards/mini-graph-card-bundle.js
+  type: module
+- url: /local/cards/slider-entity-row.js
+  type: module
+- url: /local/cards/button-card.js
+  type: module
+
