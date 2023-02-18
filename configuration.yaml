@@ -19,22 +19,8 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 # Example configuration.yaml entry to enable the cloud component
-cloud:
+#cloud:
 
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: Room Sense
-  username: roomuser
-  password: roomuser2
-  max_retries: 3
-  default_measurement: state
-
-# Example configuration.yaml entry
-panel_iframe:
-  plotly:
-    title: Plotly
-    url: https://plot.ly/dash
 
 
 recorder:
@@ -93,9 +79,9 @@ template:
 lovelace:
   mode: storage
   dashboards:
-    lovelace-sense:
+    lovelace-roomsense:
       mode: yaml
-      title: sense
+      title: RoomSense IQ
       icon: mdi:script
       show_in_sidebar: true
       filename: dashboards.yaml

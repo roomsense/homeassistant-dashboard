@@ -536,7 +536,7 @@ views:
                   - type: custom:button-card
                     entity: sensor.roomsense_movement_f412fad7b074
                     icon: mdi:circle
-                    name: Status
+                    name: Occupancy Status
                     state:
                       - value: '0'
                         styles:
