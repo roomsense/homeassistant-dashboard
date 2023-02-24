@@ -439,7 +439,7 @@ views:
                     tap_action:
                       action: toggle
                     entity: button.roomsense_read_f412fad7b074
-                    name: Read
+                    name: Get Configs
                     show_icon: false
                     style: |
                       ha-card {
@@ -451,7 +451,7 @@ views:
                     tap_action:
                       action: toggle
                     entity: button.roomsense_config_f412fad7b074
-                    name: Config
+                    name: Set Configs
                     show_icon: false
                     style: |
                       ha-card {
@@ -464,7 +464,7 @@ views:
                       action: toggle
                     show_icon: false
                     entity: button.roomsense_reset_f412fad7b074
-                    name: Reset
+                    name: Factory Reset
                     style: |
                       ha-card {
                         background: #888 !important;
@@ -853,6 +853,9 @@ views:
                 apex_config:
                  chart:
                    height: 250px
+                 yaxis:
+                   min: 0
+                   max: 4100
                     
                 style: |
                       ha-card {
@@ -861,3 +864,4 @@ views:
                         border-radius: 0px;
 
                       }
+
