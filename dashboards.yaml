@@ -423,11 +423,13 @@ views:
                   - type: entities
                     entities:
                           - entity: number.roomsense_maxmacrorange_f412fad7b074
-                            name: Max Macro Range
+                            name: Max Macro Range (cm)
                           - entity: number.roomsense_maxmicrorange_f412fad7b074
-                            name: Max Micro Range
+                            name: Max Micro Range (cm)
                           - entity:  number.roomsense_timeout_f412fad7b074
-                            name: Timeout(s)
+                            name: Timeout (sec)
+                          - entity:  number.roomsense_pirsensitivity_f412fad7b074
+                            name: PIR Sensitivity (L→H)
                     style: |
                       ha-card {
                         border: 0px;
