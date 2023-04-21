@@ -1,6 +1,6 @@
 # RoomSense IQ and Home Assistant Dashboard
 
-[RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") is an advanced open-source hardware room monitoring device that utilizes cutting-edge mmWave radar technology and PIR sensor to detect and measure people's movement, providing highly accurate occupancy detection. With its ability to measure temperature, humidity, light density and by adjusting the detailed configurations in Home Assistant, you can customize the device to your liking, creating a personalized occupancy detection method that perfectly fits your living space.
+[RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") is an advanced room monitoring device that utilizes cutting-edge mmWave radar technology and PIR sensor to detect and measure people's movement, providing highly accurate occupancy detection. With its ability to measure temperature, humidity, light density and by adjusting the detailed configurations in Home Assistant, you can customize the device to your liking, creating a personalized occupancy detection method that perfectly fits your living space.
 
 This repository contains code and configurations to create a visually appealing dashboard for RoomSense IQ in Home Assistant.  The solution offers real-time plotting capabilities with an update rate of 25ms, allowing users to monitor and analyze movement energy levels in real-time.
 
