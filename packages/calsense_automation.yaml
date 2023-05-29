@@ -1,0 +1,32 @@
+automation:
+    alias: CalSense automation
+    description: ""
+    trigger:
+      - platform: state
+        entity_id:
+            - switch.roomsense_calsense_f412fae8c840
+            - switch.roomsense_calsense_f412fae8c864
+            - switch.roomsense_calsense_f412fae8c830
+            - switch.roomsense_calsense_f412fae8c758
+        to: "on"
+    condition: []
+    action:
+      - service: switch.turn_off
+        data_template:
+          entity_id: >
+
+            {% set excluded_entity_id = trigger.entity_id %} {% set sensor_entity_id
+            = 'sensor.sensorids' %} {% set other_ids = state_attr(sensor_entity_id,
+            'ids') | default([]) %} {% set switch_entity_ids = states.switch |
+                selectattr('entity_id', 'match', 'switch.roomsense_calsense_.*') |
+                map(attribute='entity_id') | list %}
+            {% set data = namespace(switch_entity_ids_to_turn_off=[]) %} {% for
+            entity_id in switch_entity_ids %}
+                {% set dynamic_id = entity_id.split('_')[-1] %}
+                {% if dynamic_id != excluded_entity_id.split('_')[-1] and dynamic_id in other_ids %}
+                    {% set data.switch_entity_ids_to_turn_off = data.switch_entity_ids_to_turn_off + [entity_id] %}
+
+                {% endif %}
+            {% endfor %}  {{ data.switch_entity_ids_to_turn_off | join(', ') }} {%
+            if data.switch_entity_ids_to_turn_off | length == 0 %} none {% endif %}
+    mode: single

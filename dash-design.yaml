@@ -1,4 +1,3 @@
-
   - title: changeTabId
     type: panel
     cards:
@@ -30,7 +29,7 @@
                     border-radius: 1px;
                   }
               - type: markdown
-                content: '## Profile settings'
+                content: '## ProxiSense'
                 style: |
                   ha-card {
                     border: 0px;
@@ -423,11 +422,17 @@
                   - type: entities
                     entities:
                           - entity: number.roomsense_maxmacrorange_newIdHere
-                            name: Max Macro Range
+                            name: Max Macro Range (cm)
                           - entity: number.roomsense_maxmicrorange_newIdHere
-                            name: Max Micro Range
+                            name: Max Micro Range (cm)
                           - entity:  number.roomsense_timeout_newIdHere
-                            name: Timeout(s)
+                            name: Timeout (sec)
+                          - entity:  number.roomsense_pirsensitivity_newIdHere
+                            name: PIR Sensitivity (L→H)
+                          - entity:  switch.roomsense_bedsense_newIdHere
+                            name: BedSense
+                          - entity:  switch.roomsense_calsense_newIdHere
+                            name: CalSense
                     style: |
                       ha-card {
                         border: 0px;
@@ -439,7 +444,7 @@
                     tap_action:
                       action: toggle
                     entity: button.roomsense_read_newIdHere
-                    name: Read
+                    name: Get Configs
                     show_icon: false
                     style: |
                       ha-card {
@@ -451,7 +456,7 @@
                     tap_action:
                       action: toggle
                     entity: button.roomsense_config_newIdHere
-                    name: Config
+                    name: Set Configs
                     show_icon: false
                     style: |
                       ha-card {
@@ -464,7 +469,7 @@
                       action: toggle
                     show_icon: false
                     entity: button.roomsense_reset_newIdHere
-                    name: Reset
+                    name: Factory Reset
                     style: |
                       ha-card {
                         background: #888 !important;
@@ -489,31 +494,6 @@
                         padding-top: 6px !important;
                       }
 
-                  - type: custom:button-card
-                    entity: sensor.start_stop_status_newIdHere
-                    show_icon: false
-                    tap_action:
-                      action: call-service
-                      service: button.press
-                      service_data:
-                        entity_id: button.roomsense_start_newIdHere
-                    name: >
-                      [[[
-                        if (entity.state == 1)
-                          return "Stop";
-                        else
-                          return "Start";
-                      ]]]
-                    styles:
-                        card:
-                          - height: 40px
-                          - border-radius: 10px
-                          - box-shadow: none
-                          - border: 0px
-                    style: |
-                      ha-card {
-                        background: #888888;
-                        }
                   - type: markdown
                     content: <br>
                     style: |
@@ -536,12 +516,16 @@
                   - type: custom:button-card
                     entity: sensor.roomsense_movement_newIdHere
                     icon: mdi:circle
-                    name: Status
+                    #name: Occupancy Status
+                    name: |
+                      [[[ if (entity.state == 0) return "Vacant";
+                       if (entity.state == 2)  return "Occupied"; 
+                      else  return ""  ]]]
                     state:
                       - value: '0'
                         styles:
                           icon:
-                            - color: 'green'
+                            - color: '#3498db'
                       - value: '1'
                         styles:
                           icon:
@@ -549,7 +533,7 @@
                       - value: '2'
                         styles:
                           icon:
-                            - color: '#add8e6'
+                            - color: '#fe9700'
                       - value: '3'
                         styles:
                           icon:
@@ -603,7 +587,6 @@
                               - box-shadow: none
                               - border: 0px
                           
-                
               - type: custom:apexcharts-card
                 header:
                   show: true
@@ -664,6 +647,7 @@
                         border-radius: 0px;
 
                       }
+                
               - type: custom:mini-graph-card
                 entities:
                   - entity: sensor.roomsense_temperature_newIdHere
@@ -702,7 +686,7 @@
                     tap_action:
                       action: none
                     icon: mdi:motion-sensor
-                    entity:   binary_sensor.roomsense_pir_newIdHere
+                    entity: binary_sensor.roomsense_pir_newIdHere
                     name: PIR
                     state:
                       - value: 'on'
@@ -735,6 +719,8 @@
                       ha-markdown {
                         padding-top: 6px !important;
                       }
+                      
+                      
               - type: custom:apexcharts-card
                 header:
                   show: true
@@ -795,6 +781,7 @@
                         border-radius: 0px;
 
                       }
+           
               - type: custom:mini-graph-card
                 entities:
                       - entity: sensor.roomsense_humidity_newIdHere
@@ -816,6 +803,8 @@
                     color: blue
                     opacity: 1
                     stroke_width: 2
+                    
+                update_interval: 1s
                 header:
                   show: true
                   title: Light Density
@@ -823,11 +812,14 @@
                 apex_config:
                  chart:
                    height: 250px
+                 yaxis:
+                   min: 0
+                   max: 4100
                     
                 style: |
                       ha-card {
                         box-shadow: none;
                         border: 0px;
                         border-radius: 0px;
-
                       }
+                      

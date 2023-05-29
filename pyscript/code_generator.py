@@ -1,18 +1,16 @@
-import os 
+import os
 from homeassistant.helpers.template import Template
 
-@time_trigger('startup')
-#@state_trigger('EVENT_HOMEASSISTANT_STARTED')
-
-def render_template(template,  **kwargs):
+def render_template(template, hass, **kwargs):
     tpl = Template(template, hass)
     return str(tpl.async_render(kwargs))
 
-    
-def replace_sensor_id():
+@service
+def generate_sensors_dash():
     file_path = 'dash-design.yaml'
-    sensor_ids =  render_template("{{ state_attr('sensor.sensorids','ids') | list  }}")
-    sensor_ids = sensor_ids.strip('[]').replace("'", "").split(", ")
+    r_var="{{ state_attr('sensor.sensorids','ids') | list  }}"
+    sensor_ids =  render_template(r_var,hass)
+    sensor_ids =  sensor_ids.strip('[]').replace("'", "").split(", ")
     file_descriptor = os.open(file_path, os.O_RDONLY)
     
     # read the contents of the file using os.read()
@@ -32,7 +30,8 @@ def replace_sensor_id():
         for i in range(len(modified_lines)):
             tab_text=str(current_tab)
             modified_lines[i] = modified_lines[i].replace('newIdHere', sensor_id)
-            tab_name =  render_template("{{ states('input_text.dashtab" + tab_text + "') }}")
+            r_var2= "{{ states('input_text.dashtab"+tab_text+"') }}"
+            tab_name =  render_template(r_var2,hass)
             modified_lines[i] = modified_lines[i].replace('changeTabId', tab_name)
         # write the modified contents back to the file using os.write()
         for line in modified_lines:
@@ -53,16 +52,7 @@ def replace_sensor_id():
         os.write(file_descriptor, b'              - entity: input_text.dashtab')
         os.write(file_descriptor, str(dash_id_sensor).encode())
         os.write(file_descriptor, b'\n')
+
+
     os.close(file_descriptor)
-    
-task.sleep(3)
-replace_sensor_id()
-    
-    
-    
-    
-    
-    
-    
-    
     

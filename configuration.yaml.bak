@@ -15,7 +15,6 @@ recorder:
             - sensor
             - binary_sensor
             - person
-            - switch
     exclude: 
         entity_globs:
         - number.micro_threshold_*
@@ -127,7 +126,7 @@ template:
                 {% set ids = states.sensor.sensorids.attributes.ids %}
                 
                 {% for id in ids %}
-                  {% set entities = ["number.roomsense_macrothreshold0_" ~ id, "number.roomsense_macrothreshold1_" ~ id, "number.roomsense_macrothreshold2_" ~ id,"number.roomsense_macrothreshold3_" ~ id,"number.roomsense_macrothreshold4_" ~ id,"number.roomsense_macrothreshold4_" ~ id,"number.roomsense_macrothreshold5_" ~ id,"number.roomsense_macrothreshold6_" ~ id,"number.roomsense_macrothreshold7_" ~ id,"number.roomsense_macrothreshold8_" ~ id] %}
+                  {% set entities = ["sensor.roomsense_macrobin0_" ~ id, "sensor.roomsense_macrobin1_" ~ id, "sensor.roomsense_macrobin2_" ~ id,"sensor.roomsense_macrobin3_" ~ id,"sensor.roomsense_macrobin4_" ~ id,"sensor.roomsense_macrobin4_" ~ id,"sensor.roomsense_macrobin5_" ~ id,"sensor.roomsense_macrobin6_" ~ id,"sensor.roomsense_macrobin7_" ~ id,"sensor.roomsense_macrobin8_" ~ id] %}
                   {% set temp = namespace(result=[]) %}
                   {% set temp2 = namespace(result=[]) %}
                   {% for entity in entities %}
