@@ -1,55 +1,71 @@
 # RoomSense IQ and Home Assistant Dashboard
 
-[RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") is an advanced room monitoring device that utilizes cutting-edge mmWave radar technology and PIR sensor to detect and measure people's movement, providing highly accurate occupancy detection. With its ability to measure temperature, humidity, light density and by adjusting the detailed configurations in Home Assistant, you can customize the device to your liking, creating a personalized occupancy detection method that perfectly fits your living space.
+[RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") is a breakthrough all-in-one sensor device for attendance-based room automation which empowers smart home enthusiasts to effortlessly automate every aspect of their home simply through their attendance. As you move around, your home seamlessly provides relevant services, creating an enjoyable experience and convenient environment. It’s as if your home and you are in perfect harmony.
 
-This repository contains code and configurations to create a visually appealing dashboard for RoomSense IQ in Home Assistant.  The solution offers real-time plotting capabilities with an update rate of 25ms, allowing users to monitor and analyze movement energy levels in real-time.
+**SightSense**  an innovative user interface adds a whole new dimension to this powerful platform. SightSense auto-populates a visually appealing dashboard in the popular home assistant that offers exceptional insights into your room environment. With its advanced features such as **ProxiSense**, **CalSense**, **BedSense**, and **EnergySense**, users gain unparalleled control over their living environments. It effortlessly manages multiple sensors, enhancing the overall user experience.
+
+
+This repository contains code and configurations for SightSense. 
 
 <img src="https://drive.google.com/uc?export=view&id=1dLDwZrMXrG-qxOB9Yj37AN5snObpj3An" width="750" height="375" />
 
-
 # Requirements
 
-| Items | Comments |
-| --------------- | --------------- |
-| [RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") | Used in this project  |
-| Raspberry Pi 4 | Any Home Assistant-compatible device should work |
-| Home Assistant | V9.5 |
-| MQTT Mosquitto* | [Installation Guide](https://www.youtube.com/watch?v=Xg0IR35Inow&t=1s&ab_channel=SinaMoshksar "YouTube Video")|
-| MariaDB* | [Installation Guide](https://www.youtube.com/watch?v=Xg0IR35Inow&t=1s&ab_channel=SinaMoshksar "YouTube Video")|
+ Install MQTT mosquitto and set it up and make sure the RoomSense entities are accessible on your Home Assistant.
 
-*Note: To enable communication between RoomSense IQ and Home Assistant, you'll require an MQTT broker add-on such as MQTT Mosquitto. Additionally, for real-time visualization of movement energy levels with a 25ms refresh rate, a high-speed database addon such as MariaDB is necessary. The communication takes place via WiFi using the MQTT protocol.
+# Installation
 
-# Description
-Within this repository, there are multiple files, and for each file, a brief description has been provided, along with instructions on how to utilize them.
+To set up SightSense, please follow the steps below:
 
-## configuration.yaml
-Add the code provided in this file into the configuration.yaml file for your Home Assistant instance.
-
-## dashboards.yaml
-Put dashboards.yaml file into your config folder.
-
-## <em>www</em> folder
-Copy all the files in this folder and paste them into the 'config/www' directory.
-
-## resources
-Go to <em>Settings</em> → <em>Dashboards</em> → <em>Resouces</em> --> Add these urls one by one:
-
+1. Open an SSH terminal to your Home Assistant instance.
+2. Use the following commands to get the required files:
+   
+```bash
+cd ~/config
+curl -sL https://raw.githubusercontent.com/roomsense/homeassistant-dashboard/main/get-all.sh | bash -s
 ```
-- url: /local/cards/card-mod.js
-  type: JavaScript module
-- url: /local/cards/apexcharts-card.js
-  type: JavaScript module
-- url: /local/cards/numberbox-card.js
-  type: JavaScript module
-- url: /local/cards/mini-graph-card-bundle.js
-  type: JavaScript module
-- url: /local/cards/slider-entity-row.js
-  type: JavaScript module
-- url: /local/cards/button-card.js
-  type: JavaScript module
+4. Add the yaml code below into your configuration.yaml file:
+```yaml
+homeassistant:
+  packages: !include_dir_named packages
+#config for pyscript
+pyscript:
+  allow_all_imports: true
+  hass_is_global: true
+#config for lovelace dash
+lovelace:
+  mode: storage
+  dashboards:
+    lovelace-roomsense:
+      mode: yaml
+      title: RoomSense IQ
+      icon: mdi:script
+      show_in_sidebar: true
+      filename: dashboards.yaml
 ```
 
-After making all the necessary changes, restart your Home Assistant. Once the system boots up, you should be able to see a new dashboard named "sense".
+5. Go to the Profile tab in Home Assistant and scroll down to turn on Advanced Mode.
+   
+7. Go to Settings → Dashboards → Top right corner icon and add these resources if the related card is not already installed with HACS.
 
-![Micro Movement](https://drive.google.com/uc?export=view&id=176vOu_IijYFLfRuvFzkdn6PsbpGUzsIT)
+| URL                                  | Type                |
+| ------------------------------------ | ------------------- |
+| /local/cards/apexcharts-card.js       | JavaScript Module   |
+| /local/cards/button-card.js           | JavaScript Module   |
+| /local/cards/card-mod.js              | JavaScript Module   |
+| /local/cards/mini-graph-card-bundle.js| JavaScript Module   |
+| /local/cards/numberbox-card.js        | JavaScript Module   |
+| /local/cards/slider-entity-row.js     | JavaScript Module   |
+
+
+8. Run the reboot command:
+```bash
+ha core restart
+```
+
+Once the system boots up, you should be able to see a new tab named "RoomsSnse IQ".
+<img src="https://drive.google.com/file/d/1OUFA-SsaZZcKutRg6GGnkf3DYaQRJIfX/view?usp=sharing"/>
+
+![Refresh](https://drive.google.com/file/d/1OUFA-SsaZZcKutRg6GGnkf3DYaQRJIfX/view?usp=sharing)
+
 
