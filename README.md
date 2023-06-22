@@ -11,7 +11,7 @@ This repository contains code and configurations for SightSense.
 
 # Requirements
 
- Install MQTT mosquitto and set it up and make sure the RoomSense entities are accessible on your Home Assistant.
+ Install MQTT mosquitto and make sure the RoomSense entities are accessible on your Home Assistant.
 
 # Installation
 
@@ -63,9 +63,4 @@ lovelace:
 ha core restart
 ```
 
-Once the system boots up completely, you should be able to see a new tab named "RoomsSnse IQ". Press refresh on the top right helps to load faster.
-<img src="https://drive.google.com/file/d/1OUFA-SsaZZcKutRg6GGnkf3DYaQRJIfX/view?usp=sharing"/>
-
-![Refresh](https://drive.google.com/file/d/1OUFA-SsaZZcKutRg6GGnkf3DYaQRJIfX/view?usp=sharing)
-
-
+Once the system boots up completely, you should be able to see a new tab named "RoomsSnse IQ". Press Refresh on the top right corner to make the loading faster. 
