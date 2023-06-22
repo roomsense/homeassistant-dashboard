@@ -1,0 +1,825 @@
+  - title: changeTabId
+    type: panel
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: picture
+                image: /local/logo_transparent_background.png
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        border-radius: 0px;
+                        background: #00000000;
+
+                      }
+
+             
+              - type: markdown
+                content: '# <center> Parameters config'
+                style: |
+                  ha-card {
+                    border: 0px ;
+                    border-radius: 1px;
+                  }
+              - type: markdown
+                content: '## ProxiSense'
+                style: |
+                  ha-card {
+                    border: 0px;
+                    border-radius: 1px;
+                    background: #00000000;
+                  }
+              - type: horizontal-stack
+                cards:
+                  - type: vertical-stack
+                    cards:
+                      - type: markdown
+                        content: <center><strong> Range
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 50px !important;
+                            padding-top: 10px !important;
+                            border-radius: 0px;
+                            outline: 2px solid ;
+                            padding-right: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+                            padding-right: 0px;
+    
+                          }
+                      - type: markdown
+                        content: <center>0cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>0cm - 75cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>75cm - 150cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>150cm - 225cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>225cm - 300cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>300cm - 375cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>375cm - 450cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>450cm - 525cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - type: markdown
+                        content: <center>525cm - 600cm
+                        border: false
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 40px !important;
+                            padding-top: 2px !important;
+                            border-radius: 0px;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                  - type: vertical-stack
+                    cards:
+                      - type: markdown
+                        content: <center><strong>Macro<br>Threshold
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 50px !important;
+                            border-radius: 0px;
+                            outline: 2px solid ;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+                          }
+                      - entity: number.roomsense_macrothreshold0_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold1_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold2_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold3_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold4_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold5_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold6_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold7_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_macrothreshold8_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                  - type: vertical-stack
+                    cards:
+                      - type: markdown
+                        content: |
+                          <center><strong>Micro<br>Threshold
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            height: 50px !important;
+                            border-radius: 0px;
+                            outline: 2px solid ;
+    
+                          }
+                          ha-markdown {
+                            padding-top: 6px !important;
+    
+                          }
+                      - entity: number.roomsense_microthreshold0_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold1_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold2_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold3_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold4_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold5_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold6_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold7_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                      - entity: number.roomsense_microthreshold8_newIdHere
+                        type: custom:slider-entity-row
+                        full_row: true
+                        hide_state: true
+                        style: |
+                          ha-card {
+                            box-shadow: none;
+                            border: 0px;
+                            border-radius: 0px;
+                          }
+                          
+              - type: vertical-stack
+                cards:
+                  - type: entities
+                    entities:
+                          - entity: number.roomsense_maxmacrorange_newIdHere
+                            name: Max Macro Range (cm)
+                          - entity: number.roomsense_maxmicrorange_newIdHere
+                            name: Max Micro Range (cm)
+                          - entity:  number.roomsense_timeout_newIdHere
+                            name: Timeout (sec)
+                          - entity:  number.roomsense_pirsensitivity_newIdHere
+                            name: PIR Sensitivity (L→H)
+                          - entity:  switch.roomsense_bedsense_newIdHere
+                            name: BedSense
+                          - entity:  switch.roomsense_calsense_newIdHere
+                            name: CalSense
+                    style: |
+                      ha-card {
+                        border: 0px;
+                        border-radius: 0px;
+                      }  
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: button.roomsense_read_newIdHere
+                    name: Get Configs
+                    show_icon: false
+                    style: |
+                      ha-card {
+                        background: #888 !important;
+                        border: 0px;
+                        border-radius: 10px;
+                      }  
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: button.roomsense_config_newIdHere
+                    name: Set Configs
+                    show_icon: false
+                    style: |
+                      ha-card {
+                        background: #888 !important;
+                        border: 0px;
+                        border-radius: 10px;
+                      }  
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    show_icon: false
+                    entity: button.roomsense_reset_newIdHere
+                    name: Factory Reset
+                    style: |
+                      ha-card {
+                        background: #888 !important;
+                        border: 0px;
+                        border-radius: 10px;
+                      }  
+                           
+              - type: horizontal-stack
+                cards:
+                  - type: markdown
+                    content: <br>
+                    style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        height: 40px !important;
+                        border-radius: 0px;
+                        background: #00000000;
+
+                      }
+                      ha-markdown {
+                        padding-top: 6px !important;
+                      }
+
+                  - type: markdown
+                    content: <br>
+                    style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        height: 40px !important;
+                        border-radius: 0px;
+                        background: #00000000;
+
+                      }
+                      ha-markdown {
+                        padding-top: 6px !important;
+                      }
+                           
+          - type: vertical-stack
+            cards:  
+              - type: horizontal-stack
+                cards:
+                  - type: custom:button-card
+                    entity: sensor.roomsense_movement_newIdHere
+                    icon: mdi:circle
+                    #name: Occupancy Status
+                    name: |
+                      [[[ if (entity.state == 0) return "Vacant";
+                       if (entity.state == 2)  return "Occupied"; 
+                      else  return ""  ]]]
+                    state:
+                      - value: '0'
+                        styles:
+                          icon:
+                            - color: '#3498db'
+                      - value: '1'
+                        styles:
+                          icon:
+                            - color: '#f00'
+                      - value: '2'
+                        styles:
+                          icon:
+                            - color: '#fe9700'
+                      - value: '3'
+                        styles:
+                          icon:
+                            - color: '#800080'
+    
+                    styles:
+                        card:
+                          - height: 200px
+                          - background-color: '#00000000'
+                          - border-radius: 0%
+                          - box-shadow: none
+                          - border: 0px
+                          
+                  - type: vertical-stack
+                    cards:
+                      - type: custom:button-card
+                        entity:  sensor.roomsense_distance_newIdHere
+                        show_name: false
+                        show_state: false
+                        show_icon: false
+                        styles:
+                            card:
+                              - height: 57px
+                              - background-color: '#00000000'
+                              - border-radius: 0%
+                              - box-shadow: none
+                              - border: 0px
+                      - type: custom:button-card
+                        entity:  sensor.roomsense_distance_newIdHere
+                        show_name: false
+                        show_state: true
+                        show_icon: false
+                        styles:
+                            card:
+                              - height: 65px
+                              - background-color: '#00000000'
+                              - border-radius: 0%
+                              - box-shadow: none
+                              - border: 0px
+                              - font-size: 50px
+                              
+                      - type: custom:button-card
+                        entity:  sensor.roomsense_distance_newIdHere
+                        name: Distance (cm)
+                        show_icon: false
+                        styles:
+                            card:
+                              - height: 70px
+                              - background-color: '#00000000'
+                              - border-radius: 0%
+                              - box-shadow: none
+                              - border: 0px
+                          
+              - type: custom:apexcharts-card
+                header:
+                  show: true
+                  title: Macro Movement 
+                  show_states: false
+                  colorize_states: false
+                graph_span: 8d
+                update_interval: 15ms
+                series:
+                  - entity: sensor.chartsdata1macro
+                    data_generator: |
+                      return entity.attributes.ids["newIdHere"].map((peak, index) => {
+                        return [moment().add(-(8-index), 'd'),  entity.attributes.ids["newIdHere"][index]];
+                      });
+                    opacity: 1
+                    stroke_width: 2
+                  - entity: sensor.chartsdata2macro
+                    data_generator: |
+                      return entity.attributes.ids["newIdHere"].map((peak, index) => {
+                        return [moment().add(-(8-index), 'd'),  entity.attributes.ids["newIdHere"][index]];
+                      });
+                    opacity: 1
+                    stroke_width: 2
+                apex_config:
+                  xaxis:
+                    type: categories
+                    overwriteCategories:
+                      - 0
+                      - 75
+                      - 150
+                      - 225
+                      - 300
+                      - 375
+                      - 450
+                      - 525
+                      - 600
+                  update_delay: 1ms
+                  update_interval: 15ms
+                  dataLabels:
+                    enabled: true
+                    dropShadow:
+                      enabled: false
+                  legend:
+                    show: false
+                  stroke:
+                    curve: straight
+                  tooltip:
+                    enabled: false
+                  chart:
+                    height: 300px
+                  yaxis:
+                   min: 0
+                   max: 100
+                style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        border-radius: 0px;
+
+                      }
+                
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.roomsense_temperature_newIdHere
+                    name: Temperature
+                    opacity: 1
+                hours_to_show: 24
+                line_width: 2
+                line_color: blue
+                style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        border-radius: 0px;
+
+                      }
+
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: markdown
+                    content: <br>
+                    style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        height: 80px !important;
+                        border-radius: 0px;
+                        background: #00000000;
+
+                      }
+                      ha-markdown {
+                        padding-top: 6px !important;
+                      }
+                  - type: custom:button-card
+                    tap_action:
+                      action: none
+                    icon: mdi:motion-sensor
+                    entity: binary_sensor.roomsense_pir_newIdHere
+                    name: PIR
+                    state:
+                      - value: 'on'
+                        styles:
+                          icon:
+                            - color: 'red'
+                      - value: 'off'
+                        styles:
+                          icon:
+                            - color: 'grey'
+    
+                    styles:
+                        card:
+                          - height: 200px
+                          - background-color: '#00000000'
+                          - border-radius: 0%
+                          - box-shadow: none
+                          - border: 0px
+                  - type: markdown
+                    content: <br>
+                    style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        height: 80px !important;
+                        border-radius: 0px;
+                        background: #00000000;
+
+                      }
+                      ha-markdown {
+                        padding-top: 6px !important;
+                      }
+                      
+                      
+              - type: custom:apexcharts-card
+                header:
+                  show: true
+                  title: Micro Movement 
+                  show_states: false
+                  colorize_states: false
+                graph_span: 8d
+                update_interval: 15ms
+                series:
+                  - entity: sensor.chartsdata1micro
+                    data_generator: |
+                      return entity.attributes.ids["newIdHere"].map((peak, index) => {
+                        return [moment().add(-(8-index), 'd'),  entity.attributes.ids["newIdHere"][index]];
+                      });
+                    opacity: 1
+                    stroke_width: 2
+                  - entity: sensor.chartsdata2micro
+                    data_generator: |
+                      return entity.attributes.ids["newIdHere"].map((peak, index) => {
+                        return [moment().add(-(8-index), 'd'),  entity.attributes.ids["newIdHere"][index]];
+                      });
+                    opacity: 1
+                    stroke_width: 2
+                apex_config:
+                  xaxis:
+                    type: categories
+                    overwriteCategories:
+                      - 0
+                      - 75
+                      - 150
+                      - 225
+                      - 300
+                      - 375
+                      - 450
+                      - 525
+                      - 600
+                  update_delay: 1ms
+                  update_interval: 15ms
+                  dataLabels:
+                    enabled: true
+                    dropShadow:
+                      enabled: false
+                  legend:
+                    show: false
+                  stroke:
+                    curve: straight
+                  tooltip:
+                    enabled: false
+                  chart:
+                   height: 300px
+                  yaxis:
+                   min: 0
+                   max: 100
+                style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        border-radius: 0px;
+
+                      }
+           
+              - type: custom:mini-graph-card
+                entities:
+                      - entity: sensor.roomsense_humidity_newIdHere
+                        name: Humidity
+                line_width: 2
+                hours_to_show: 24
+                style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        border-radius: 0px;
+
+                      }
+                    
+              - type: custom:apexcharts-card
+                graph_span: 2m # This will represent the span of the brush
+                series:
+                  - entity: sensor.roomsense_photocell_newIdHere
+                    color: blue
+                    opacity: 1
+                    stroke_width: 2
+                    
+                update_interval: 1s
+                header:
+                  show: true
+                  title: Light Density
+                  show_states: false
+                apex_config:
+                 chart:
+                   height: 250px
+                 yaxis:
+                   min: 0
+                   max: 4100
+                    
+                style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                        border-radius: 0px;
+                      }
+                      
