@@ -63,7 +63,7 @@ lovelace:
 ha core restart
 ```
 
-Once the system boots up, you should be able to see a new tab named "RoomsSnse IQ".
+Once the system boots up completely, you should be able to see a new tab named "RoomsSnse IQ". Press refresh on the top right helps to load faster.
 <img src="https://drive.google.com/file/d/1OUFA-SsaZZcKutRg6GGnkf3DYaQRJIfX/view?usp=sharing"/>
 
 ![Refresh](https://drive.google.com/file/d/1OUFA-SsaZZcKutRg6GGnkf3DYaQRJIfX/view?usp=sharing)
