@@ -1,8 +1,6 @@
 # RoomSense IQ and Home Assistant Dashboard
 
-[RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") is a breakthrough all-in-one sensor device for attendance-based room automation which empowers smart home enthusiasts to effortlessly automate every aspect of their home simply through their attendance. As you move around, your home seamlessly provides relevant services, creating an enjoyable experience and convenient environment. It’s as if your home and you are in perfect harmony.
-
-**SightSense**  an innovative user interface adds a whole new dimension to this powerful platform. SightSense auto-populates a visually appealing dashboard in the popular home assistant that offers exceptional insights into your room environment. With its advanced features such as **ProxiSense**, **CalSense**, **BedSense**, and **EnergySense**, users gain unparalleled control over their living environments. It effortlessly manages multiple sensors, enhancing the overall user experience.
+**SightSense**  an innovative user interface that adds a whole new dimension to the [RoomSense IQ](https://www.roomsenselabs.com "www.roomsenselabs.com") platform. SightSense auto-populates a visually appealing dashboard in the popular home assistant that offers exceptional insights into your room environment. With its advanced features such as **ProxiSense**, **CalSense**, **BedSense**, and **EnergySense**, users gain unparalleled control over their living environments. It effortlessly manages multiple sensors, enhancing the overall user experience.
 
 
 This repository contains code and configurations for SightSense. 
